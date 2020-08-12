@@ -26,12 +26,16 @@ public class MainActivity extends AppCompatActivity {
         //listen for app action
         filter.addAction("com.example.lab4broadcaster");
 
-        //Instantiate receiver objects
+        //Stand Alone Receiver Class MyStandAloneReceiver
+        //Instantiate receiver object
         standAloneRx = new MyStandAloneReceiver();
-        subClassedRx = new MySubclassReceiver();
-
-        //Register receivers with intent filter & receiver objects (Context-registered receivers)
+        //Register receiver with intent filter & receiver objects (Context-registered receivers)
         registerReceiver(standAloneRx, filter);
+
+        //Code for Subclasses receiver MySubclassReceiver
+        //Instantiate receiver object
+        subClassedRx = new MySubclassReceiver();
+        //Register receiver with intent filter & receiver objects (Context-registered receivers)
         registerReceiver(subClassedRx, filter);
     }
 
